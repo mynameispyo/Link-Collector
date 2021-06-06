@@ -1,0 +1,30 @@
+{
+    "name": "LinkCollector",
+    "version": "1.0",
+
+    "description": "LinkCollector collects links by well organizing",
+    "author": "Inpyo Lee <20261178@nvnet.org>",
+
+    "manifest_version": 2,
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["content.js"]
+        }
+    ],
+    "browser_action": {
+        "default_popup": "index.html",
+        "default_title": "Link Collector"
+    },
+    "background": {
+        "scripts": ["background.js"]
+    },
+    "permissions": [
+        "storage",
+        "webRequest", 
+        "http://*/*/*",
+        "https://*/*/*",
+        "webRequestBlocking",
+        "tabs"
+    ]
+}
